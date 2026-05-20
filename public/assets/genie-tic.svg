@@ -1,0 +1,34 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="40" fill="#0B0B12"/>
+  <circle cx="240" cy="220" r="90" fill="#FFD166" opacity="0.15"/>
+  <circle cx="960" cy="220" r="90" fill="#4FD1FF" opacity="0.15"/>
+  <circle cx="600" cy="540" r="90" fill="#FFD166" opacity="0.15"/>
+  <rect x="180" y="280" width="160" height="110" rx="24" fill="#11131F" stroke="#FFD166" stroke-width="4"/>
+  <rect x="860" y="280" width="160" height="110" rx="24" fill="#11131F" stroke="#4FD1FF" stroke-width="4"/>
+  <rect x="520" y="440" width="160" height="110" rx="24" fill="#11131F" stroke="#FFD166" stroke-width="4"/>
+  <path d="M242 240C242 225.431 232.569 216 218 216H214C199.431 216 190 225.431 190 240V252H242V240Z" fill="#FFD166"/>
+  <path d="M968 240C968 225.431 958.569 216 944 216H940C925.431 216 916 225.431 916 240V252H968V240Z" fill="#4FD1FF"/>
+  <path d="M602 560C602 545.431 592.569 536 578 536H574C559.431 536 550 545.431 550 560V572H602V560Z" fill="#FFD166"/>
+  <path d="M240 290C240 292.761 238.209 295 236 295H214C211.791 295 210 292.761 210 290V282H240V290Z" fill="#FFD166"/>
+  <path d="M960 290C960 292.761 958.209 295 956 295H934C931.791 295 930 292.761 930 290V282H960V290Z" fill="#4FD1FF"/>
+  <path d="M600 500C600 502.761 598.209 505 596 505H574C571.791 505 570 502.761 570 500V492H600V500Z" fill="#FFD166"/>
+  <circle cx="238" cy="208" r="12" fill="#FFD166"/>
+  <circle cx="962" cy="208" r="12" fill="#4FD1FF"/>
+  <circle cx="602" cy="528" r="12" fill="#FFD166"/>
+  <path d="M300 300L440 370" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/>
+  <path d="M900 300L760 370" stroke="#4FD1FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M430 448L530 500" stroke="#FFD166" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="265" cy="397" r="12" fill="#FFD166"/>
+  <circle cx="832" cy="390" r="12" fill="#4FD1FF"/>
+  <path d="M390 478L521 500" stroke="#AEB6D1" stroke-width="4" stroke-dasharray="16 12"/>
+  <g opacity="0.95">
+    <rect x="235" y="80" width="220" height="80" rx="20" fill="#091011" stroke="#FFD166" stroke-width="3"/>
+    <text x="350" y="130" fill="#FFD166" font-family="Inter, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Genie TIC</text>
+  </g>
+  <g fill="#fff" opacity="0.9">
+    <circle cx="330" cy="340" r="8"/>
+    <circle cx="870" cy="340" r="8"/>
+    <circle cx="620" cy="570" r="8"/>
+  </g>
+  <text x="600" y="740" fill="#AEB6D1" font-family="Inter, sans-serif" font-size="22" text-anchor="middle">Plateforme de suivi de bétail à l’échelle nationale</text>
+</svg>
