@@ -190,13 +190,16 @@
   border-radius: 18px;
   padding: 28px;
   backdrop-filter: blur(12px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (hover: hover) {
   .about-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 209, 102, 0.1), 0 0 40px rgba(79, 209, 255, 0.05);
+    border-color: rgba(255, 209, 102, 0.2);
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -214,6 +217,12 @@
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--primary);
+  transition: all 0.4s ease;
+}
+
+.profile-card:hover img {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
 }
 
 /* INFOS PERSONNELLES */
@@ -382,12 +391,15 @@
   padding: 20px 25px;
   border-radius: 16px;
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 209, 102, 0.15);
+  border-color: rgba(255, 209, 102, 0.2);
+  background: rgba(255,255,255,0.08);
 }
 
 .skill h3 {
@@ -402,14 +414,20 @@
   border-radius: 12px;
   overflow: hidden;
   height: 16px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .skill-bar div {
   width: 0%;
   height: 100%;
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 12px;
-  transition: width 1.2s ease-in-out;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+}
+
+.skill:hover .skill-bar div {
+  box-shadow: 0 0 25px rgba(255, 209, 102, 0.5);
 }
 
 /* ANIMATION AU SCROLL */
@@ -485,17 +503,20 @@
 .timeline-item {
   position: relative;
   width: 45%;
-  background: rgba(255,184,0,0.1);
+  background: rgba(255,184,0,0.08);
   padding: 20px 24px;
   border-radius: 16px;
   margin: 20px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 209, 102, 0.1);
 }
 
 @media (hover: hover) {
   .timeline-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 209, 102, 0.2);
+    border-color: rgba(255, 209, 102, 0.3);
+    background: rgba(255, 184, 0, 0.12);
   }
 }
 
@@ -537,6 +558,13 @@
   border-radius: 50%;
   border: 3px solid #0D0D0D;
   z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 4px rgba(255, 209, 102, 0.1);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 8px rgba(255, 209, 102, 0.2);
 }
 
 .timeline-item:nth-child(odd)::before {
@@ -612,12 +640,14 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .project-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 209, 102, 0.1), 0 0 40px rgba(79, 209, 255, 0.05);
+  border-color: rgba(255, 209, 102, 0.2);
 }
 
 /* IMAGE */
@@ -625,11 +655,11 @@
   width: 100%;
   display: block;
   border-radius: 16px;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* OVERLAY INFO */
@@ -639,11 +669,11 @@
   left: 0;
   width: 100%;
   padding: 16px;
-  background: rgba(13,13,13,0.85);
+  background: linear-gradient(180deg, rgba(13,13,13,0) 0%, rgba(13,13,13,0.95) 60%, rgba(13,13,13,0.99) 100%);
   color: #fff;
   text-align: left;
   transform: translateY(100%);
-  transition: transform 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-radius: 0 0 16px 16px;
 }
 
@@ -723,17 +753,25 @@
 .contact-form textarea {
   padding: 14px 16px;
   border-radius: 12px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   outline: none;
   font-size: 1rem;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.08);
   color: #fff;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.12);
+  border-color: rgba(255, 209, 102, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.1), inset 0 0 0 1px rgba(255, 209, 102, 0.2);
+  transform: translateY(-2px);
 }
 
 .contact-form textarea {
@@ -747,7 +785,27 @@
   font-size: 1rem;
   font-weight: bold;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form .btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.contact-form .btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 /* BOUTON WHATSAPP */
@@ -762,11 +820,32 @@
   border-radius: 12px;
   text-decoration: none;
   margin-bottom: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.whatsapp-btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .whatsapp-btn:hover {
-  filter: brightness(1.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-text {

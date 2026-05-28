@@ -28,6 +28,13 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--primary);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 8px 16px rgba(255, 209, 102, 0.2);
 }
 
 .nav {
@@ -41,7 +48,7 @@
   color: var(--text-muted);
   font-size: 1rem;
   font-weight: 600;
-  transition: color 0.24s ease;
+  transition: color 0.24s ease, text-shadow 0.24s ease;
 }
 
 .nav a::after {
@@ -59,10 +66,12 @@
 .nav a:hover,
 .nav a:focus-visible {
   color: var(--text);
+  text-shadow: 0 0 8px rgba(255, 209, 102, 0.3);
 }
 
 .nav a.active {
   color: var(--text);
+  text-shadow: 0 0 8px rgba(255, 209, 102, 0.2);
 }
 
 .nav a.active::after {
@@ -77,11 +86,32 @@
   border-radius: 999px;
   font-weight: 700;
   font-size: 1rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.25s ease, background-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-4px);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn.primary {
@@ -429,13 +459,14 @@
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .soft-skill-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-6px);
   border-color: rgba(255, 209, 102, 0.35);
   background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(255, 209, 102, 0.12);
 }
 
 .soft-skill-icon {
@@ -449,6 +480,12 @@
   color: var(--primary);
   font-size: 0.9rem;
   font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.soft-skill-card:hover .soft-skill-icon {
+  transform: scale(1.15) rotate(8deg);
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.25), rgba(79, 209, 255, 0.1));
 }
 
 .soft-skill-card strong {
@@ -484,12 +521,14 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 28px;
   padding: 28px 28px 26px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .skill:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 68px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 68px rgba(255, 209, 102, 0.15);
+  border-color: rgba(255, 209, 102, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .skill-meta {
@@ -525,7 +564,7 @@
   height: 100%;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   border-radius: 999px;
-  transition: width 1.2s ease-in-out;
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 0 10px 25px rgba(255, 209, 102, 0.25);
 }
 

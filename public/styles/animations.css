@@ -1,0 +1,342 @@
+/* =============================
+   ANIMATIONS SUBTILES & ÉLÉGANTES
+============================= */
+
+/* Keyframes pour animations fluides */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 184, 0, 0);
+  }
+}
+
+@keyframes lineAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* =============================
+   APPLY ANIMATIONS
+============================= */
+
+/* Hover sur les liens de navigation */
+.nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Hover sur les boutons */
+.btn {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 184, 0, 0.3);
+}
+
+.btn.secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 229, 255, 0.2);
+}
+
+/* Animations sur les cartes */
+.about-card,
+.project-card,
+.skill {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-card:hover,
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.skill:hover {
+  transform: scale(1.02);
+}
+
+/* Stagger effect pour les éléments reveal */
+.reveal {
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+.reveal:nth-child(1) { animation-delay: 0.1s; }
+.reveal:nth-child(2) { animation-delay: 0.2s; }
+.reveal:nth-child(3) { animation-delay: 0.3s; }
+.reveal:nth-child(4) { animation-delay: 0.4s; }
+.reveal:nth-child(5) { animation-delay: 0.5s; }
+.reveal:nth-child(6) { animation-delay: 0.6s; }
+
+/* Éviter les animations multiples */
+.reveal.visible {
+  animation: none;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Images avec effet subtil */
+img {
+  transition: transform 0.4s ease;
+}
+
+.about-card img:hover,
+.project-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Timeline avec animation */
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  opacity: 0;
+  animation: fadeInLeft 0.7s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 8px rgba(255, 184, 0, 0.2);
+}
+
+/* Skill bars avec animation de remplissage */
+.skill-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+  width: 0;
+  animation: slideRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--value);
+  }
+}
+
+.skill:hover .skill-bar div {
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.4);
+}
+
+/* Soft skills cards avec stagger */
+.soft-skill-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.soft-skill-card:nth-child(1) { animation-delay: 0.1s; }
+.soft-skill-card:nth-child(2) { animation-delay: 0.2s; }
+.soft-skill-card:nth-child(3) { animation-delay: 0.3s; }
+.soft-skill-card:nth-child(4) { animation-delay: 0.4s; }
+.soft-skill-card:nth-child(5) { animation-delay: 0.5s; }
+.soft-skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+.soft-skill-card:hover {
+  transform: translateY(-4px);
+}
+
+.soft-skill-icon {
+  transition: all 0.3s ease;
+}
+
+.soft-skill-card:hover .soft-skill-icon {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--primary);
+}
+
+/* Contact form avec animation */
+.contact-form {
+  animation: slideDownFade 0.8s ease forwards;
+}
+
+.contact-form input,
+.contact-form textarea {
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 184, 0, 0.2);
+}
+
+.whatsapp-btn {
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  background: rgba(0, 229, 255, 0.1) !important;
+}
+
+/* Section intro */
+.section-intro {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  margin-right: 12px;
+  animation: lineAnimation 0.6s ease 0.3s forwards;
+}
+
+/* Parallax effect léger sur les images hero */
+.hero-image img {
+  transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Support du dark mode et animations avec transitions fluides */
+body {
+  transition: background-color 0.3s ease;
+}
+
+/* Input focus animation */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+}
